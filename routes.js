@@ -32,7 +32,14 @@ const routes = [
         path : '/hello/{name?}',
         handler : (request, h) =>{
             const {name = 'strainger'} = request.params
-            return `hello, ${name}. welcome to hello page`
+            const {lang} = request.query
+
+            if (lang == 'id'){
+                return `Halo, ${name}. selamat datang di hello page`
+            } else {
+                return `Nihao ${name}. Bing CHilling`
+            }
+            
         }
     },
     {
