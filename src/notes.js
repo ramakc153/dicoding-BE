@@ -1,1 +1,2 @@
-console.log('this is notes')
+const notes = [];
+module.exports = notes;
