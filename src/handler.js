@@ -39,12 +39,16 @@ const addNoteHandler = (request,h) =>{
 
 };
 
-const getAllNotesHandler =(request,h) =>({
-    status : 'success',
-    data : {
+const getAllNotesHandler =(request,h) =>{
+    const response = h.response({
+        status : 'success',
+        data : {
         notes,
-    },
-})
+        }
+    })
+    response.code(200)
+    return response
+}
 
 const getNotesByIdHandler = (request,h)=>{
     const {id} = request.params;
